@@ -2,30 +2,32 @@
 
 ### Frontend
 
-Using the terminal, go to the project root folder and execute:
+Situarse en la raiz del directorio frontend en la terminal y ejecutar:
 
 ```bash
-cd frontend # Localized in frontend directory
-npm start   # Up frontend
+npm install # La primera vez para descargar las dependencias
+npm start 
 ```
 
-Default url: http://localhost:3000
+Url por defecto: http://localhost:3000
 
-## Login
+### Generar usuario Administrador
 
-### If you use default "SECRET" value on .env file: 
+Usando POSTMAN, o su cliente de preferencia, realice un petición POST a la URL 'http://localhost:4000/register', enviando en el body como raw/json el siguiente json personalizado con sus datos:
 
-Using usename and password by default for login:
+```JSON
+{
+    "nom_usuario": "su_nombre",
+    "clave_usuario": "su_contraseña",
+}
+```
 
-**Username**: admin@gmail.com
-**Password**: 320350
+**NOTA**: Está opción se podrá usar una única vez.
 
-## If you are using custom "SECRET" value on .env file
+Ahora podrá loguearse desde 'http://localhost:4000/login' con los datos:
 
-Login with your credentials
-
-**Username**: admin@gmail.com
-**Pasword**: yourPasswordEncrypted
+**Correo electrónico**: 'admin@gmail.com',
+**Contraseña**: 'la asignada en el paso anterior'
 
 **JOIN**
 
