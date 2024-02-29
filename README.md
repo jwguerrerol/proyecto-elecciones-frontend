@@ -1,5 +1,7 @@
 # Proyecto elecciones frontend
 
+Antes de ejecutar el proyecto, asegurese de que el proyecto backend se esté ejecundo.
+
 ### Frontend
 
 Situarse en la raiz del directorio frontend en la terminal y ejecutar:
