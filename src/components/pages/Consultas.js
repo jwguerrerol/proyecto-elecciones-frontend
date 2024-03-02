@@ -126,15 +126,15 @@ function Consultas() {
 
   return (
     <div className='container'>
-      <h1 className='text-4xl font-bold leading-none tracking-tight text-white text-center dark:text-white my-10'>Consultas</h1>
-      <div className='grid grid-cols-1 md:flex md:flex-col lg:grid lg:grid-cols-10 md:gap-3 text-md'>
+      <h1 className='text-4xl font-bold leading-none tracking-tight text-blueDarkBase text-center dark:text-white my-10'>Consultas</h1>
+      <div className='grid grid-cols-1 md:flex md:flex-col lg:grid lg:grid-cols-12 md:gap-3 text-md'>
         <div className='text-md lg:col-start-1 lg:col-end-4 mb-4'>
           { (Array.isArray(departamentos) && Array.isArray(municipios))  && (Array.isArray(puestosDeVotacion) && votosPorCandidatos.length > 0) ?
-            <div className='bg-slate-900 p-4 rounded-md'>
+            <div className='bg-blueBase p-4 rounded-md'>
               <form className='rounded-md'>
                 <h2 className='capitalize text-md text-center my-2 text-white'>filtros</h2>
                 <div className='flex flex-col mx-auto justify-center'>
-                  <label className='text-white'>Departamento</label>
+                  <label className='mt-2 text-white'>Departamento</label>
                   <select onChange={ handleDepartamento } value={ departamentoSeleccionado !== '' ? departamentoSeleccionado : '' } className='select select-bordered select-sm 2xl:select-md w-full'>
                     <option value={''} disabled>Seleccionar departamento</option>
                     {Array.isArray(departamentos) && departamentos.map(departamento => {
@@ -145,7 +145,7 @@ function Consultas() {
                   </select>
                 </div>
                 <div className='flex flex-col mx-auto justify-center'>
-                  <label className='text-white'>Municipio</label>
+                  <label className='mt-2 text-white'>Municipio</label>
                   <select onChange={ handleMunicipio } value={ municipioSeleccionado !== '' ? municipioSeleccionado : '' }  className='select select-bordered select-sm 2xl:select-md w-full'>
                     <option value={''} disabled>Seleccionar municipio</option>
                     { departamentoSeleccionado === '' ? '' : municipios?.map(municipio => {
@@ -156,7 +156,7 @@ function Consultas() {
                   </select>
                 </div>
                 <div className='flex flex-col mx-auto justify-center'>
-                  <label className='text-white'>Puestos de votación</label>
+                  <label className='mt-2 text-white'>Puestos de votación</label>
                   <select onChange={ handlePuestoDeVotacion } value={ puestoDeVotacionSeleccionado !== '' ? puestoDeVotacionSeleccionado : '' }  className='select select-bordered select-sm 2xl:select-md w-full'>
                     <option value={''} disabled>Seleccionar puesto de votación</option>
                     { municipioSeleccionado === '' ? '' :  puestosDeVotacion?.map(puestodevotacion => {
@@ -167,7 +167,7 @@ function Consultas() {
                   </select>
                 </div>
                 <div className='flex flex-col mx-auto justify-center'>
-                  <label className='text-white'>Mesas</label>
+                  <label className='mt-2 text-white'>Mesas</label>
                   <select onChange={ handleMesa } value={ mesaSeleccionada !== '' ? mesaSeleccionada : '' }  className='select select-bordered select-sm 2xl:select-md w-full'>
                     <option value={''} disabled>Seleccionar mesa</option>
                     { mesasPorPuestoDeVotacion.map(mesa => {
@@ -178,7 +178,7 @@ function Consultas() {
                   </select>
                 </div>
                 <div className='flex flex-col justify-center gap-2 mt-2'>
-                  { errorNotification !== '' ? <Notificacion message={ errorNotification } notificationColor={'bg-red-800'} fontColor={ 'text-white' } width={ 'md:w-80'  } /> : '' }
+                  { errorNotification !== '' ? <Notificacion message={ errorNotification } notificationColor={'bg-red-600'} fontColor={ 'text-white' }  /> : '' }
                   {/* <input type='submit' placeholder='Filtrar' className='btn btn-md btn-accent hover:bg-green-600 my-2 capitalize' />  */}
                 </div>
               </form>

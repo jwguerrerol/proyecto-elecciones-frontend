@@ -95,13 +95,13 @@ function ConsultasMesasEnviadas() {
 
   return (
     <div className='container md:w-11/12 max-w-7xl'>
-      <h1 className='text-4xl font-bold leading-none tracking-tight text-white text-center dark:text-white my-10'>Consultas Mesas Enviadas</h1>
+      <h1 className='text-4xl font-bold leading-none tracking-tight text-blueBase text-center dark:text-white my-10'>Consultas Mesas Enviadas</h1>
       <div className='text-md'>
         <div className='text-md mb-4'>
           { ((Array.isArray(departamentos) && Array.isArray(municipios))  && Array.isArray(puestosDeVotacion)) &&
             <div>
-              <h2 className='capitalize text-xl text-center my-2 text-white'>filtros</h2>
-              <form className='bg-slate-900 p-4 rounded-md md:grid md:grid-cols-3 lg:flex  lg:flex-row lg:justify-center lg:items-center gap-1'>
+              <h2 className='capitalize text-xl text-center my-2 text-blueBase'>filtros</h2>
+              <form className='bg-blueBase p-4 rounded-md md:grid md:grid-cols-3 lg:flex  lg:flex-row lg:justify-center lg:items-center gap-1'>
                 <div className='flex flex-col mx-auto justify-center'>
                   <label className='text-white'>Departamento</label>
                   <select onChange={ handleDepartamento } value={ departamentoSeleccionado } className='select select-bordered select-sm  lg:select-sm 2xl:select-sm w-full'>
@@ -146,7 +146,7 @@ function ConsultasMesasEnviadas() {
                 </div>
               
                 <div className='flex justify-center gap-3 mt-2 div-btn-limpiar'>
-                  <button onClick={ handleResetButton} className='btn btn-warning my-2 btn-limpiar' > Limpiar </button>
+                  <button onClick={ handleResetButton} className='btn btn-info my-2 btn-limpiar hover:btn-success' > Limpiar </button>
                 </div>
               </form>
             </div>
@@ -163,30 +163,30 @@ function ConsultasMesasEnviadas() {
                     { ( municipioSeleccionado === '' && puestoDeVotacionSeleccionado === '') && departamentosFiltrados.map((dep, index) => {
                       return(
                         <div key={'dep'.concat(index)}>  
-                          <p className='text-2xl uppercase font-bold'>{ dep.nom_departamento } ({ dep.id_departamento }) </p>
+                          <p className='text-2xl text-blueBase uppercase font-bold'>{ dep.nom_departamento } ({ dep.id_departamento }) </p>
                           { Array.isArray(municipios) && (municipios.filter(municipio => municipio.id_departamento === dep.id_departamento)).map((mun, index) => {
                             return (
                               <div key={ 'mun'.concat(index) }>
                                 { estadoMesasSeleccionado === 'enviadas' && (mesasEnviadas.filter( mesa => mesa.id_municipio === mun.id_municipio)).length > 0 &&
                                 <>
-                                  <p className='text-xl first-letter:font-bold'>{ mun.nom_municipio }</p>
+                                  <p className='text-xl first-letter:font-bold text-blueBase'>{ mun.nom_municipio }</p>
                                   { (Array.isArray(puestosDeVotacion) && puestosDeVotacion.filter(puestoDeVotacion => puestoDeVotacion.id_municipio === mun.id_municipio)).map( (puesto, index) => {
                                     return (
                                       <div key={ 'pue'.concat(index) } className='my-4'>
                                         { estadoMesasSeleccionado === 'enviadas' && (mesasEnviadas.filter( mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).length > 0 &&
                                         <>
-                                          <p className='lowercase first-letter:uppercase pb-2'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
+                                          <p className='lowercase first-letter:uppercase pb-2 text-blueBase'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
                                           <div className='grid grid-cols-5 md:grid-cols-10 gap-1'>
                                           { Array.isArray(mesas) && (mesas.filter(mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).map( (m, index) => {
                                             return (
                                               <div key={ 'mes'.concat(index)}>
                                                 { mesasEnviadas.filter(mesa =>(mesa.id_municipio === mun.id_municipio && mesa.id_puestodevotacion === puesto.id_puestodevotacion) && mesa.id_mesa === m.id_mesa).length > 0 
                                                   ? 
-                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-accent text-black rounded-md'>
+                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueLightBase  text-black rounded-md'>
                                                         <p>{ m.id_mesa }</p>
                                                     </Link>
                                                   :
-                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-slate-900 rounded-md'>
+                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueBase rounded-md'>
                                                       <p>{ m.id_mesa }</p>
                                                   </Link>
                                                       }
@@ -203,24 +203,24 @@ function ConsultasMesasEnviadas() {
                                 }
                                 { estadoMesasSeleccionado === 'todas' && 
                                 <>
-                                  <p className='text-xl first-letter:font-bold'>{ mun.nom_municipio }</p>
+                                  <p className='text-xl first-letter:font-bold text-blueBase'>{ mun.nom_municipio }</p>
                                   { (Array.isArray(puestosDeVotacion) && puestosDeVotacion.filter(puestoDeVotacion => puestoDeVotacion.id_municipio === mun.id_municipio)).map( (puesto, index) => {
                                     return (
                                       <div key={ 'pue'.concat(index) } className='my-4'>
                                         { estadoMesasSeleccionado === 'todas' &&
                                         <>
-                                          <p className='lowercase first-letter:uppercase pb-2'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
+                                          <p className='lowercase first-letter:uppercase pb-2 text-blueBase'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
                                           <div className='grid grid-cols-5 md:grid-cols-10 gap-1'>
                                           { Array.isArray(mesas) && (mesas.filter(mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).map( (m, index) => {
                                             return (
                                               <div key={ 'mes'.concat(index)}>
                                                 { mesasEnviadas.filter(mesa =>(mesa.id_municipio === mun.id_municipio && mesa.id_puestodevotacion === puesto.id_puestodevotacion) && mesa.id_mesa === m.id_mesa).length > 0 
                                                   ? 
-                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-accent text-black rounded-md'>
+                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueLightBase  text-black rounded-md'>
                                                         <p>{ m.id_mesa }</p>
                                                     </Link>
                                                   :
-                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-slate-900 rounded-md'>
+                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueBase rounded-md'>
                                                       <p>{ m.id_mesa }</p>
                                                   </Link>
                                                       }
@@ -247,30 +247,30 @@ function ConsultasMesasEnviadas() {
                     { ((municipioSeleccionado !== '')  && puestoDeVotacionSeleccionado === '') && departamentosFiltrados.map((dep, index) => {
                       return(
                         <div key={'dep'.concat(index)}>  
-                          <p className='text-2xl uppercase font-bold'>{ dep.nom_departamento } ({ dep.id_departamento }) </p>
+                          <p className='text-2xl uppercase font-bold text-blueBase'>{ dep.nom_departamento } ({ dep.id_departamento }) </p>
                           { Array.isArray(municipios) && municipiosFiltrados.map((mun, index) => {
                             return (
                               <div key={ 'mun'.concat(index) }>
                               { estadoMesasSeleccionado === 'enviadas' && (mesasEnviadas.filter( mesa => mesa.id_municipio === mun.id_municipio)).length > 0 &&
                                 <>
-                                  <p className='text-xl first-letter:font-bold'>{ mun.nom_municipio }</p>
+                                  <p className='text-xl first-letter:font-bold text-blueBase'>{ mun.nom_municipio }</p>
                                   { (Array.isArray(puestosDeVotacion) && Array.isArray(puestosDeVotacionFiltrados))  && (puestosDeVotacion.filter(puestodevotacion => puestodevotacion.id_departamento === dep.id_departamento && puestodevotacion.id_municipio === mun.id_municipio )).map( (puesto, index) => {
                                     return (
                                       <div key={ 'pue'.concat(index) } className='my-4'>
                                         { estadoMesasSeleccionado === 'enviadas' && (mesasEnviadas.filter( mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).length > 0 &&
                                         <>
-                                          <p className='lowercase first-letter:uppercase pb-2'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
+                                          <p className='lowercase first-letter:uppercase pb-2 text-blueBase'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
                                           <div className='grid grid-cols-5 md:grid-cols-10 gap-1'>
                                           { Array.isArray(mesas) && (mesas.filter(mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).map( (m, index) => {
                                             return (
                                               <div key={ 'mes'.concat(index)}>
                                                 { mesasEnviadas.filter(mesa =>(mesa.id_municipio === mun.id_municipio && mesa.id_puestodevotacion === puesto.id_puestodevotacion) && mesa.id_mesa === m.id_mesa).length > 0 
                                                   ? 
-                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-accent text-black rounded-md'>
+                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueLightBase  text-black rounded-md'>
                                                         <p>{ m.id_mesa }</p>
                                                     </Link>
                                                   :
-                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-slate-900 rounded-md'>
+                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueBase rounded-md'>
                                                       <p>{ m.id_mesa }</p>
                                                   </Link>
                                                       }
@@ -287,24 +287,24 @@ function ConsultasMesasEnviadas() {
                               }
                               { estadoMesasSeleccionado === 'todas' && 
                                 <>
-                                  <p className='text-xl first-letter:font-bold'>{ mun.nom_municipio }</p>
+                                  <p className='text-xl first-letter:font-bold text-blueBase'>{ mun.nom_municipio }</p>
                                   { (Array.isArray(puestosDeVotacion) && puestosDeVotacion.filter(puestoDeVotacion => puestoDeVotacion.id_municipio === mun.id_municipio)).map( (puesto, index) => {
                                     return (
                                       <div key={ 'pue'.concat(index) } className='my-4'>
                                         { estadoMesasSeleccionado === 'todas' &&
                                         <>
-                                          <p className='lowercase first-letter:uppercase pb-2'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
+                                          <p className='lowercase first-letter:uppercase pb-2 text-blueBase'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
                                           <div className='grid grid-cols-5 md:grid-cols-10 gap-1'>
                                           { Array.isArray(mesas) && (mesas.filter(mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).map( (m, index) => {
                                             return (
                                               <div key={ 'mes'.concat(index)}>
                                                 { mesasEnviadas.filter(mesa =>(mesa.id_municipio === mun.id_municipio && mesa.id_puestodevotacion === puesto.id_puestodevotacion) && mesa.id_mesa === m.id_mesa).length > 0 
                                                   ? 
-                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-accent text-black rounded-md'>
+                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueLightBase  text-black rounded-md'>
                                                         <p>{ m.id_mesa }</p>
                                                     </Link>
                                                   :
-                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-slate-900 rounded-md'>
+                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueBase rounded-md'>
                                                       <p>{ m.id_mesa }</p>
                                                   </Link>
                                                       }
@@ -331,30 +331,30 @@ function ConsultasMesasEnviadas() {
                     { (puestoDeVotacionSeleccionado !== '') && departamentosFiltrados.map((dep, index) => {
                       return(
                         <div key={'dep'.concat(index)}>  
-                          <p className='text-2xl uppercase font-bold'>{ dep.nom_departamento } ({ dep.id_departamento }) </p>
+                          <p className='text-2xl uppercase font-bold text-blueBase'>{ dep.nom_departamento } ({ dep.id_departamento }) </p>
                           { Array.isArray(municipios) && municipiosFiltrados.map((mun, index) => {
                             return (
                               <div key={ 'mun'.concat(index) }>
                                 { estadoMesasSeleccionado === 'enviadas' && (mesasEnviadas.filter( mesa => mesa.id_municipio === mun.id_municipio)).length > 0 &&
                                 <>
-                                  <p className='text-xl first-letter:font-bold'>{ mun.nom_municipio }</p>
+                                  <p className='text-xl first-letter:font-bold text-blueBase'>{ mun.nom_municipio }</p>
                                   { (Array.isArray(puestosDeVotacion) && Array.isArray(puestosDeVotacionFiltrados))  &&puestosDeVotacionFiltrados.map( (puesto, index) => {
                                     return (
                                       <div key={ 'pue'.concat(index) } className='my-4'>
                                         { estadoMesasSeleccionado === 'enviadas' && (mesasEnviadas.filter( mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).length > 0 &&
                                         <>
-                                          <p className='lowercase first-letter:uppercase pb-2'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
+                                          <p className='lowercase first-letter:uppercase pb-2 text-blueBase'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
                                           <div className='grid grid-cols-5 md:grid-cols-10 gap-1'>
                                           { Array.isArray(mesas) && (mesas.filter(mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).map( (m, index) => {
                                             return (
                                               <div key={ 'mes'.concat(index)}>
                                                 { mesasEnviadas.filter(mesa =>(mesa.id_municipio === mun.id_municipio && mesa.id_puestodevotacion === puesto.id_puestodevotacion) && mesa.id_mesa === m.id_mesa).length > 0 
                                                   ? 
-                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-accent text-black rounded-md'>
+                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueLightBase  text-black rounded-md'>
                                                         <p>{ m.id_mesa }</p>
                                                     </Link>
                                                   :
-                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-slate-900 rounded-md'>
+                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueBase rounded-md'>
                                                       <p>{ m.id_mesa }</p>
                                                   </Link>
                                                       }
@@ -371,24 +371,24 @@ function ConsultasMesasEnviadas() {
                               }
                               { estadoMesasSeleccionado === 'todas' && 
                                 <>
-                                  <p className='text-xl first-letter:font-bold'>{ mun.nom_municipio }</p>
+                                  <p className='text-xl first-letter:font-bold text-blueBase'>{ mun.nom_municipio }</p>
                                   { (Array.isArray(puestosDeVotacion) && puestosDeVotacion.filter(puestoDeVotacion => puestoDeVotacion.id_puestodevotacion === Number(puestoDeVotacionSeleccionado))).map( (puesto, index) => {
                                     return (
                                       <div key={ 'pue'.concat(index) } className='my-4'>
                                         
                                         <>
-                                          <p className='lowercase first-letter:uppercase pb-2'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
+                                          <p className='lowercase first-letter:uppercase pb-2 text-blueBase'>{ puesto.nom_puestodevotacion } ({ puesto.id_puestodevotacion })</p>
                                           <div className='grid grid-cols-5 md:grid-cols-10 gap-1'>
                                           { Array.isArray(mesas) && (mesas.filter(mesa => mesa.id_puestodevotacion === puesto.id_puestodevotacion)).map( (m, index) => {
                                             return (
                                               <div key={ 'mes'.concat(index)}>
                                                 { mesasEnviadas.filter(mesa =>(mesa.id_municipio === mun.id_municipio && mesa.id_puestodevotacion === puesto.id_puestodevotacion) && mesa.id_mesa === m.id_mesa).length > 0 
                                                   ? 
-                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-accent text-black rounded-md'>
+                                                    <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueLightBase  text-black rounded-md'>
                                                         <p>{ m.id_mesa }</p>
                                                     </Link>
                                                   :
-                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-slate-900 rounded-md'>
+                                                  <Link to={`/formularioe14/${ puesto.id_puestodevotacion }/${ m.id_mesa }`}className='flex flex-col justify-center items-center p-2 border-spacing-1 border-slate-400 bg-blueBase rounded-md'>
                                                       <p>{ m.id_mesa }</p>
                                                   </Link>
                                                       }

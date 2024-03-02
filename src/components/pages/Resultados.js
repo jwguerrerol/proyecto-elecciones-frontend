@@ -141,8 +141,8 @@ function Resultados() {
 
   return (
     <div className="container md:w-12/12 lg:w-12/12 2xl:w-10/12">
-      <h1 className="text-4xl font-bold leading-none tracking-tight text-white text-center dark:text-white my-10">Resultados</h1>
-      <div className="text-white grid md:grid-cols-3 gap-1 p-4 border-1 my-4 bg-slate-900">
+      <h1 className="text-4xl font-bold leading-none tracking-tight text-blueBase text-center dark:text-white my-10">Resultados</h1>
+      <div className="text-white grid md:grid-cols-3 gap-1 p-4 border-1 rounded-md my-4 bg-blueBase">
         <div className="flex flex-col items-center justify-center w-full">
           <div className='flex flex-col items-center justify-center max-h-36 w-full'>
             <img src={ candidatoLider?.votos === 0 || candidatoLider?.votos === undefined ? imagenCandidatoLider : candidatoLider?.url_imagen } alt='imagen-candidato' className='h-36 rounded-full' />

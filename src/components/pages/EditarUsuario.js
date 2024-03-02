@@ -107,14 +107,14 @@ function EditarUsuario() {
   return (
     <div className='container'>
       <div className='flex flex-row justify-end'>
-        <button onClick={ volverAtras } className='btn bt-sm bg-neutral text-white mt-4 hover:bg-slate-800 transition-all'>Atrás</button>
+        <button onClick={ volverAtras } className='btn bt-sm bg-neutral text-white mt-4 hover:bg-blueBase transition-all'>Atrás</button>
       </div>
-      <h1 className="text-4xl font-bold leading-none tracking-tight text-white text-center dark:text-white my-10">Editar Usuario</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="form container md:px-20 p-8 shadow-lg text-white md:max-w-lg bg-slate-900 rounded-md">
+      <h1 className="text-4xl font-bold leading-none tracking-tight text-blueBase text-center dark:text-white my-10">Editar Usuario</h1>
+      <form onSubmit={handleSubmit(onSubmit)} className="form container md:px-20 p-8 shadow-custom-card text-white md:max-w-lg bg-white rounded-md">
       <img src={ urlImagen ? `${ urlImagen }` : `${ urlBase }/uploads/images/users/user-icon.png` } alt='foto usuario' className='h-32 w-auto mx-auto my-4 rounded-md' />
 
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">nombre completo:</label>
+          <label className="label text-md text-grayLightBase rounded-md py-0 px-2 my-1 capitalize">nombre completo:</label>
           <Controller 
             name = 'nom_usuario'
             control = {control}
@@ -133,7 +133,7 @@ function EditarUsuario() {
         
         
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Contraseña:</label>
+          <label className="label text-md text-grayLightBase rounded-md py-0 px-2 my-1 capitalize">Contraseña:</label>
 
           <Controller 
             name = 'clave_usuario'
@@ -151,7 +151,7 @@ function EditarUsuario() {
         </div>
         
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Correo:</label>
+          <label className="label text-md text-grayLightBase rounded-md py-0 px-2 my-1 capitalize">Correo:</label>
 
           <Controller 
             name = 'correo_usuario'
@@ -171,7 +171,7 @@ function EditarUsuario() {
         </div>
         
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Role:</label>
+          <label className="label text-md text-grayLightBase rounded-md py-0 px-2 my-1 capitalize">Role:</label>
 
           <Controller 
             name = 'id_role'
@@ -192,7 +192,7 @@ function EditarUsuario() {
         </div>
 
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Puesto de votación asignado:</label>
+          <label className="label text-md text-grayLightBase rounded-md py-0 px-2 my-1 capitalize">Puesto de votación asignado:</label>
              <Controller 
               name = 'id_puestodevotacion'
               control = {control}
@@ -212,14 +212,14 @@ function EditarUsuario() {
         </div>
 
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Subir imagen (opcional):</label>
+          <label className="label text-md text-grayLightBase rounded-md py-0 px-2 my-1 capitalize">Subir imagen (opcional):</label>
           <Controller
             name = 'url_imagen'
             control = {control}
             render={({field}) => (
               <>
                 <input
-                  className="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-white transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-slate-900 focus:border-primary focus:text-white focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary text-sm"
+                  className="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-white transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-blueBase focus:border-primary focus:text-white focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary text-sm"
                   type="file"
                   id="formFile" 
                   {...register('url_imagen')}
@@ -232,7 +232,7 @@ function EditarUsuario() {
         </div>
 
         <div className="flex justify-center contenedor-boton-enviar">
-          <button type="submit" className="btn btn-accent boton-enviar md:w-72">Actualizar usuario</button>
+          <button type="submit" className="btn btn-success boton-enviar md:w-72">Actualizar usuario</button>
         </div>
       </form>
     </div>

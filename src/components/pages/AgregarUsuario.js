@@ -117,14 +117,14 @@ function AgregarUsuario() {
   return (
     <div className='container'>
       <div className='flex flex-row justify-end'>
-        <button onClick={ volverAtras } className='btn bt-sm bg-neutral text-white mt-4 hover:bg-slate-800 transition-all'>Atrás</button>
+        <button onClick={ volverAtras } className='btn bt-sm bg-neutral text-white mt-4 hover:bg-blueBase transition-all'>Atrás</button>
       </div>
-      <h1 className="text-4xl font-bold leading-none tracking-tight text-white text-center dark:text-white my-10">Agregar Usuario</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="form container md:px-20 p-8 shadow-lg text-white md:max-w-lg bg-slate-900 rounded-md">
+      <h1 className="text-4xl font-bold leading-none tracking-tight text-blueBase text-center dark:text-white my-10">Agregar Usuario</h1>
+      <form onSubmit={handleSubmit(onSubmit)} className="form container md:px-20 p-8 text-white md:max-w-lg bg-white shadow-custom-card rounded-md">
       {/* <img src={ `${ urlBase }/uploads/images/users/user-icon.png` } alt='foto usuario' className='h-20 w-auto mx-auto my-4 rounded-sm' /> */}
 
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">nombre completo:</label>
+          <label className="label text-md text-blueBase rounded-md py-0 px-2 my-1 capitalize">nombre completo:</label>
           <Controller 
             name = 'nom_usuario'
             control = {control}
@@ -143,7 +143,7 @@ function AgregarUsuario() {
         
         
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Contraseña:</label>
+          <label className="label text-md text-blueBase rounded-md py-0 px-2 my-1 capitalize">Contraseña:</label>
 
           <Controller 
             name = 'clave_usuario'
@@ -161,7 +161,7 @@ function AgregarUsuario() {
         </div>
         
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Correo:</label>
+          <label className="label text-md text-blueBase rounded-md py-0 px-2 my-1 capitalize">Correo:</label>
 
           <Controller 
             name = 'correo_usuario'
@@ -181,7 +181,7 @@ function AgregarUsuario() {
         </div>
         
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Role:</label>
+          <label className="label text-md text-blueBase rounded-md py-0 px-2 my-1 capitalize">Role:</label>
 
           <Controller 
             name = 'id_role'
@@ -202,7 +202,7 @@ function AgregarUsuario() {
         </div>
 
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Puesto de votación asignado:</label>
+          <label className="label text-md text-blueBase rounded-md py-0 px-2 my-1 capitalize">Puesto de votación asignado:</label>
              <Controller 
               name = 'id_puestodevotacion'
               control = {control}
@@ -222,7 +222,7 @@ function AgregarUsuario() {
         </div>
 
         <div className="mb-4">
-          <label className="label text-md bg-slate-800 rounded-md py-0 px-2 my-1 capitalize">Subir imagen (opcional):</label>
+          <label className="label text-md text-blueBase rounded-md py-0 px-2 my-1 capitalize">Subir imagen (opcional):</label>
           <Controller
             name = 'url_imagen'
             control = {control}
@@ -242,7 +242,7 @@ function AgregarUsuario() {
         </div>
 
         <div className="flex justify-center contenedor-boton-enviar">
-          <button type="submit" className="btn btn-accent boton-enviar md:w-72">Agregar usuario</button>
+          <button type="submit" className="btn btn-success boton-enviar md:w-72">Agregar usuario</button>
         </div>
       </form>
     </div>

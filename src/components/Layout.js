@@ -5,7 +5,7 @@ import Footer from "./ui/Footer"
 function Layout() {
 
   return (
-      <div className="bg-neutral h-full flex flex-col justify-between" style={{ minHeight: '100vh' }}>
+      <div className="bg-grayBase h-full flex flex-col justify-between" style={{ minHeight: '100vh' }}>
         <Header />
         <Outlet />
         <Footer />

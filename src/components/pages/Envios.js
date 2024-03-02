@@ -31,10 +31,10 @@ function Envios() {
 
   return (
     <div>
-      <h1 className='text-4xl font-bold leading-none tracking-tight text-white text-center dark:text-white my-10'>Mesas</h1>
+      <h1 className='text-4xl font-bold leading-none tracking-tight text-blueBase text-center dark:text-white my-10'>Mesas</h1>
       <div className="container grid md:grid-cols-10 my-10">
         <div className="text-white md:col-start-1 md:col-end-4 ">
-          <div className="mx-2 p-4 bg-slate-900 rounded-md flex flex-col gap-2">
+          <div className="mx-2 p-4 bg-blueBase rounded-md flex flex-col gap-2">
             <p className="capitalize">departamento: { nom_departamento }</p>
             <p className="capitalize">municipio: { nom_municipio }</p>
             <p className="capitalize">puesto de votación: { id_puestodevotacion }</p>
@@ -54,7 +54,7 @@ function Envios() {
                     <p className="text-center capitalize">{item.id_mesa}</p>
                   </div>
                   :
-                  <div className="p-4 bg-slate-900 hover:bg-slate-800 transition-all cursor-pointer text-2xl rounded-md"  >
+                  <div className="p-4 bg-blueBase hover:bg-slate-800 transition-all cursor-pointer text-2xl rounded-md"  >
                     <p className="text-center capitalize">{item.id_mesa}</p>
                   </div>
           }

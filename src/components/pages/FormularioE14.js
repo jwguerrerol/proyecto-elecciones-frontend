@@ -229,10 +229,10 @@ const FormularioE14 = () => {
           <p className="p-2 rounded-md bg-gray-200 text-black my-4 text-sm font-semibold hidden">Nota: Por favor verifique la información del formato E14 antes de enviarla. Recuerda que cada envío de información es su responsabilidad.</p>
           { barraDeNotificaciones }
         </div>
-        <p className="text-4xl font-bold leading-none tracking-tight text-white text-center dark:text-white my-10">Formulario E14</p>
+        <p className="text-4xl font-bold leading-none tracking-tight text-blueBase text-center dark:text-white my-10">Formulario E14</p>
         <div className='container'>
           <form id='form-formularioe14' onSubmit={handleSubmit(onSubmit)} className='mx-auto md:mx-10 lg:w-min'>
-            <div className='bg-slate-900 rounded-md my-3 px-5'>
+            <div className='bg-blueBase rounded-md my-3 px-5'>
               <div className="flex lg:flex flex-col md:grid md:grid-cols-2 lg:flex-row lg:justify-around gap-3 mt-2 mb-2 px-4">
                 <div className="flex flex-col md:grid md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 lg:flex-row lg:items-center">
                   <p className="mr-2 mb-1 text-sm">Departamento:</p>
@@ -351,7 +351,7 @@ const FormularioE14 = () => {
             </div>
             { Array.isArray(candidatos) &&  candidatos.map( (candidato, index) => {
               return (
-                <div key={ candidato.id_candidato } className="grid md:grid-cols-10 border-spacing-1 my-1 md:my-1 rounded-md bg-slate-900 py-1 md:py-0  px-5 text-sm gap-1 h-min">
+                <div key={ candidato.id_candidato } className="grid md:grid-cols-10 border-spacing-1 my-1 md:my-1 rounded-md bg-blueBase py-1 md:py-0  px-5 text-sm gap-1 h-min">
                   <div className="flex flex-row justify-center md:justify-normal items-center md:col-start-1 md:col-end-2">
                     <p>{candidato.id_candidato}</p>
                   </div>
@@ -387,7 +387,7 @@ const FormularioE14 = () => {
                 
               )
             })}
-            <div className=" flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row justify-center lg:justify-around items-center bg-slate-900 rounded-md my-3 px-5 py-1 ">
+            <div className=" flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row justify-center lg:justify-around items-center bg-blueBase rounded-md my-3 px-5 py-1 ">
               <div className='md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 flex flex-col items-center'>
                 <p className='mb-1 text-sm text-center'>Votos en blanco</p>
                 <Controller 
@@ -495,7 +495,7 @@ const FormularioE14 = () => {
                 
               </div>
             </div>
-            <div className="mt-3 px-5 py-2  bg-slate-900 rounded-tr-md rounded-tl-md">
+            <div className="mt-3 px-5 py-2  bg-blueBase rounded-tr-md rounded-tl-md">
               <label className="mb-2 inline-block text-white text-sm">
                 Subir foto del formato E14
               </label>
@@ -517,7 +517,7 @@ const FormularioE14 = () => {
               { !mesasEnviadasActualizadas && (
                 <>
                   <input
-                    className="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-white transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-slate-900 focus:border-primary focus:text-white focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary text-sm"
+                    className="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-white transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-blueBase focus:border-primary focus:text-white focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary text-sm"
                     type="file"
                     id="formFile" 
 
@@ -540,7 +540,7 @@ const FormularioE14 = () => {
               { mesasEnviadasActualizadas && userLogged.role === 1 && (
                 <>
                   <input
-                    className="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-white transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-slate-900 focus:border-primary focus:text-white focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary text-sm"
+                    className="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-white transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-blueBase focus:border-primary focus:text-white focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary text-sm"
                     type="file"
                     id="formFile" 
                     {...register('url_imagen_e14')}
@@ -554,7 +554,7 @@ const FormularioE14 = () => {
               }
               
             </div>
-            <div className='bg-slate-900 rounded-br-md rounded-bl-md mb-3 px-5 py-2 '>
+            <div className='bg-blueBase rounded-br-md rounded-bl-md mb-3 px-5 py-2 '>
               <label className="mb-2 inline-block text-white dark:text-white text-sm">
                 Observaciones
               </label>
@@ -562,7 +562,7 @@ const FormularioE14 = () => {
             </div>
             { errorNotification !== '' && (
               <>
-                <Notificacion message={ errorNotification } notificationColor='bg-red-800' fontColor='text-white' />
+                <Notificacion message={ errorNotification } notificationColor='bg-red-600' fontColor='text-white' />
               </>
             )}
             <div className="flex flex-row justify-center my-5">
@@ -570,7 +570,7 @@ const FormularioE14 = () => {
               <Modal
               textButtonOpen={'Enviar'} textButtonClose={notificacionDeValidaciones ? 'Solucionar' : 'Cancelar'} textTitle={ notificacionDeValidaciones ? 'Validación del formulario' : 'Enviar formulario'} textParagraph={ notificacionDeValidaciones ? 'Solucionar errores antes de enviar el formulario' : 'Nota: Por favor verifique la información del formato E14 antes de enviarla. Recuerda que cada envío de información es responsabilidad de usted.'}>
                 { !notificacionDeValidaciones && (
-                  <input htmlFor="my_modal_6" id='enviarFormularioE14' type="submit" value={ 'enviar' } className="input btn btn-accent"/>
+                  <input htmlFor="my_modal_6" id='enviarFormularioE14' type="submit" value={ 'enviar' } className="input btn btn-success"/>
                 ) }
               </Modal>
               }
@@ -578,7 +578,7 @@ const FormularioE14 = () => {
               <Modal
               textButtonOpen={'Editar'} textButtonClose={notificacionDeValidaciones ? 'Solucionar' : 'Cancelar'} textTitle={ notificacionDeValidaciones ? 'Validación del formulario' : 'Enviar formulario'} textParagraph={ notificacionDeValidaciones ? 'Solucionar errores antes de enviar el formulario' : 'Nota: Por favor verifique la información del formato E14 antes de enviarla. Recuerda que cada envío de información es responsabilidad de usted.'}>
                 { !notificacionDeValidaciones && (
-                  <input htmlFor="my_modal_6" id='enviarFormularioE14' type="submit" value={ 'Actualizar formulario' } className="input btn btn-info"/>
+                  <input htmlFor="my_modal_6" id='enviarFormularioE14' type="submit" value={ 'Actualizar formulario' } className="input btn btn-success"/>
                 ) }
               </Modal>
               }
