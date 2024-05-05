@@ -8,6 +8,7 @@ import { authorization } from "../../services/usuarios"
 import Notificacion from '../ui/Notificacion'
 import Modal from '../ui/Modal'
 import { modoSoloLectura, urlBase, spinner } from '../../utils/utils'
+import Gallery from "../ui/Gallery"
 
 const FormularioE14 = () => {
 
@@ -505,7 +506,8 @@ const FormularioE14 = () => {
                   { urlImagenFormularioE14 !== '' &&
                     <div className='my-2'>
                       <p>Archivo enviado:</p>
-                      <img src={ `${ urlImagenFormularioE14 }` } alt='imagen subida formulario e14' className='h-10'/>
+                      {/* <img src={ `${ urlImagenFormularioE14 }` } alt='imagen subida formulario e14' className='h-10'/> */}
+                      <Gallery imageUrl={ urlImagenFormularioE14 } />
                     </div>
                   }  
                 
