@@ -115,7 +115,7 @@ function Resultados() {
 
   useEffect(() => {
     axios
-      .get(`${ urlBase }/mesas`)
+      .get(`${ urlBase }/consultas/mesas-enviadas`)
       .then(response => {
         const results = response.data
         const cantidadMesasEnviadas = results.length  
