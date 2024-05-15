@@ -203,7 +203,7 @@ function EditarUsuario() {
               render={({field}) => (
                 <select className="input input-bordered w-full text-black form-control uppercase" {...register('id_puestodevotacion')} required>
                 { puestosDeVotacion.map( puestodevotacion => {
-                  return <option key={ puestodevotacion.id_puestodevotacion } value={ puestodevotacion.id_puestodevotacion }>{ puestodevotacion.nom_puestodevotacion } - {puestodevotacion.id_puestodevotacion}</option>
+                  return <option key={ puestodevotacion.id_puestodevotacion } value={ puestodevotacion.id_puestodevotacion }>{ puestodevotacion.nom_puestodevotacion } - {puestodevotacion.nom_municipio}</option>
                 })}
               </select>
               )}
